@@ -1,0 +1,24 @@
+<mat-card>
+
+    <mat-form-field >
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput [(ngModel)]="firstname" name="firstname">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input type="text" matInput [(ngModel)]="lastname" name="lastname">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Phone Number</mat-label>
+        <input type="text" matInput  [(ngModel)]="phonenum" name="phonenum" required>
+      </mat-form-field>
+    <button (click)="addContact()" >Add</button>
+</mat-card>
+<mat-tab-group *ngFor="let contact of contacts">
+  <mat-tab label="First Name"> {{contact.firstname}} </mat-tab>
+  <mat-tab label="Last Name"> {{contact.lastname}} </mat-tab>
+  <mat-tab label="Phone number"> {{contact.phonenum}}</mat-tab>
+</mat-tab-group>
+<mat-card>
+    <button (click)="deleteContact(contact._id)">Delete</button>
+</mat-card>
